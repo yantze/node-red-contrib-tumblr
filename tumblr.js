@@ -29,10 +29,10 @@ module.exports = (RED) => {
         if (err) {
           node.status({ fill: "red", shape: "dot", text: `${action} fail` });
           node.error(err);
-          node.send({ error: err });
+          node.send({ error: err, originalMessage: msg });
         } else {
           node.status({ fill: "blue", shape: "dot", text: "Post complete" });
-          node.send({ payload: data });
+          node.send({ payload: data, originalMessage: msg });
         }
       });
 
@@ -40,5 +40,4 @@ module.exports = (RED) => {
   }
 
   RED.nodes.registerType("tumblr", TumblrNode);
-
 };

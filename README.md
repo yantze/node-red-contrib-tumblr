@@ -5,7 +5,7 @@
 
 # node-red-contrib-custom-tumblr
 
-[中文](./README.zh-CN.md)
+[中文](README.zh-CN.md)
 
 This is a Node-RED module for interacting with the Tumblr API. It provides nodes for both reading and writing posts, as well as fetching and deleting posts.
 

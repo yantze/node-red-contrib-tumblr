@@ -35,21 +35,36 @@ npm install node-red-contrib-custom-tumblr
 
 #### 配置
 
-- Name：节点名称。
+- Blog Name：你要获取帖子信息的 Tumblr Blog 的名称。
 - Consumer Key：你的 Tumblr 应用程序的 API KEY。
 - Consumer Secret：你的 Tumblr 应用程序的 SECRET。
 - Token：你的 Tumblr 应用程序的 TOKEN。
 - Token Secret：你的 Tumblr 应用程序的 TOKEN SECRET。
-- Blog Name：你要获取帖子信息的 Tumblr Blog 的名称。
 
 #### 输入
 
-- msg.payload.blogName：你要获取帖子信息的 Tumblr Blog 的名称。
-- msg.payload.tags：你要按标签过滤的帖子标签。
-- msg.payload.content：帖子内容
+- msg.payload：你要按标签过滤的帖子标签。
 
 #### 输出
 
 - msg.payload：从 Tumblr API 中获取的帖子信息。
 
 ## 示例
+
+创建文本内容，可以给 tumblr 前置一个 Fuction 节点，然后输入下面的内容:
+```js
+const textPost = {
+    action: 'createTextPost',
+    params: {
+        title: '',
+        body: msg.payload,
+    },
+}
+
+return { ...msg, payload: textPost };
+```
+
+删除文本内容：
+```js
+
+```
