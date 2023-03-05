@@ -2,15 +2,14 @@
     RED.nodes.registerType("tumblr", {
         category: 'Social',
         defaults: {
+            blogName: { value: "", required: true },
             consumerKey: { value: "", required: true },
             consumerSecret: { value: "", required: true },
             token: { value: "", required: true },
-            token_secret: { value: "", required: true },
-            blogName: { value: "", required: true },
-            postType: { value: 'text', required: true }
+            tokenSecret: { value: "", required: true },
         },
         color: "#7E57C2",
-        inputs: 0,
+        inputs: 1,
         outputs: 1,
         icon: "fa-tumblr",
 
@@ -22,13 +21,11 @@
         }
     });
 </script>
-
-<style>
-    .form-row {
-        margin-bottom: 10px;
-    }
-
-</style>
+<script type="text/html" data-template-name="tumblr">
+<div class="form-row">
+    <label for="node-input-blogName"><i class="fa fa-newspaper-o"></i> Blog Name</label>
+    <input type="text" id="node-input-blogName" placeholder="Blog Name">
+</div>
 
 <div class="form-row">
     <label for="node-input-consumerKey"><i class="fa fa-key"></i> Consumer Key</label>
@@ -49,21 +46,58 @@
     <label for="node-input-tokenSecret"><i class="fa fa-lock"></i> Token Secret</label>
     <input type="text" id="node-input-tokenSecret" placeholder="Token Secret">
 </div>
+</script>
 
-<div class="form-row">
-    <label for="node-input-blogName"><i class="fa fa-newspaper-o"></i> Blog Name</label>
-    <input type="text" id="node-input-blogName" placeholder="Blog Name">
-</div>
+<style>
+    .form-row {
+        margin-bottom: 10px;
+    }
 
-<div class="form-row">
-    <label for="node-input-postType"><i class="fa fa-file"></i> Post Type</label>
-    <select id="node-input-postType">
-        <option value="text">Text</option>
-        <option value="photo">Photo</option>
-        <option value="quote">Quote</option>
-        <option value="link">Link</option>
-        <option value="chat">Chat</option>
-        <option value="audio">Audio</option>
-        <option value="video">Video</option>
-    </select>
-</div>
+</style>
+
+<script type="text/html" data-help-name="tumblr">
+    <h1>Description</h1>
+    <p>This is a Node-RED module for interacting with the Tumblr API. It provides nodes for both reading and writing posts, as
+    well as fetching and deleting posts.</p>
+    <h2>Setup</h2>
+        Before using any of the Tumblr API nodes, you will need to configure your Tumblr API credentials.
+        To do this, open the node's configuration dialog and enter your Tumblr API consumer key and secret key.
+        You can find these keys by creating a new Tumblr API app at https://www.tumblr.com/oauth/apps.
+
+    <h3>Inputs</h3>
+    <dl class="message-properties">
+        <dt>msg.payload
+            <span class="property-type">object</span>
+        </dt>
+        <dd> eg. { title: 'new title', body: 'new content'} </dd>
+        <dt class="optional">msg.action
+            <span class="property-type">string</span>
+        </dt>
+        <dd>deletePost, createTextPost, createPhotoPost, createQuotePost, createLinkPost, createLhatPost, createAudioPost, createVideoPost, editPost, blogPosts, blogInfo.
+            more info <a target="_blank" href="https://github.com/tumblr/tumblr.js/blob/master/lib/tumblr.d.ts">Action Syntax</a>  </dd>
+    </dl>
+    <h3>Outputs</h3>
+    <ol class="node-ports">
+        <dl class="message-properties">
+            <dt>msg.payload <span class="property-type">object</span></dt>
+            <dd>The output base on the action type.</dd>
+        </dl>
+    </ol>
+    <h3>Details</h3>
+    <p>
+You can add a function node for tumblr, such as:
+
+    <pre>
+const textPost = {
+    action: 'createTextPost',
+    params: {
+        title: '',
+        body: msg.payload,
+    },
+}
+
+return { ...msg, payload: textPost };
+    </pre>
+    </p>
+    <p>more info ref from <a target="_blank" href="https://github.com/tumblr/tumblr.js">Tumblr.js README.md</a>.</p>
+ </script>
