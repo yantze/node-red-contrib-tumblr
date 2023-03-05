@@ -1,9 +1,9 @@
 [![platform](https://img.shields.io/badge/platform-Node--RED-red)](https://nodered.org)
-[![npm](https://img.shields.io/npm/v/node-red-contrib-tumblr.svg)](https://www.npmjs.com/package/node-red-contrib-tumblr)
-[![downloads](https://img.shields.io/npm/dt/node-red-contrib-tumblr.svg)](https://www.npmjs.com/package/node-red-contrib-tumblr)
-[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/HaroldPetersInskipp/node-red-contrib-tumblr/blob/main/LICENSE)
+[![npm](https://img.shields.io/npm/v/node-red-contrib-custom-tumblr.svg)](https://www.npmjs.com/package/node-red-contrib-custom-tumblr)
+[![downloads](https://img.shields.io/npm/dt/node-red-contrib-custom-tumblr.svg)](https://www.npmjs.com/package/node-red-contrib-custom-tumblr)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/HaroldPetersInskipp/node-red-contrib-custom-tumblr/blob/main/LICENSE)
 
-# node-red-contrib-tumblr
+# node-red-contrib-custom-tumblr
 
 [中文](./README.zh-CN.md)
 
@@ -13,7 +13,7 @@ This is a Node-RED module for interacting with the Tumblr API. It provides nodes
 
 To install this module, run the following command in your Node-RED user directory:
 
-npm install node-red-contrib-tumblr
+npm install node-red-contrib-custom-tumblr
 
 ## Configuration
 

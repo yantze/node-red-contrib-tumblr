@@ -3,7 +3,7 @@
 [![downloads](https://img.shields.io/npm/dt/node-red-contrib-tumblr.svg)](https://www.npmjs.com/package/node-red-contrib-tumblr)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/HaroldPetersInskipp/node-red-contrib-tumblr/blob/main/LICENSE)
 
-# node-red-contrib-tumblr
+# node-red-contrib-custom-tumblr
 
 一个用于与 Tumblr API 进行交互的 node-red 模块。
 
@@ -11,7 +11,7 @@
 
 使用以下命令来安装：
 
-npm install node-red-contrib-tumblr
+npm install node-red-contrib-custom-tumblr
 
 
 或者，可以直接在 node-red 编辑器中通过 Manage Palette 进行安装。
