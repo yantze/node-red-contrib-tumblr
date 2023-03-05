@@ -1,0 +1,69 @@
+<script type="text/javascript">
+    RED.nodes.registerType("tumblr", {
+        category: 'Social',
+        defaults: {
+            consumerKey: { value: "", required: true },
+            consumerSecret: { value: "", required: true },
+            token: { value: "", required: true },
+            token_secret: { value: "", required: true },
+            blogName: { value: "", required: true },
+            postType: { value: 'text', required: true }
+        },
+        color: "#7E57C2",
+        inputs: 0,
+        outputs: 1,
+        icon: "fa-tumblr",
+
+        label: function () {
+            return this.name || "Tumblr";
+        },
+        oneditprepare: function () {
+            $('#node-input-name').parent().hide();
+        }
+    });
+</script>
+
+<style>
+    .form-row {
+        margin-bottom: 10px;
+    }
+
+</style>
+
+<div class="form-row">
+    <label for="node-input-consumerKey"><i class="fa fa-key"></i> Consumer Key</label>
+    <input type="text" id="node-input-consumerKey" placeholder="Consumer Key">
+</div>
+
+<div class="form-row">
+    <label for="node-input-consumerSecret"><i class="fa fa-lock"></i> Consumer Secret</label>
+    <input type="text" id="node-input-consumerSecret" placeholder="Consumer Secret">
+</div>
+
+<div class="form-row">
+    <label for="node-input-token"><i class="fa fa-user"></i> Token</label>
+    <input type="text" id="node-input-token" placeholder="Token">
+</div>
+
+<div class="form-row">
+    <label for="node-input-tokenSecret"><i class="fa fa-lock"></i> Token Secret</label>
+    <input type="text" id="node-input-tokenSecret" placeholder="Token Secret">
+</div>
+
+<div class="form-row">
+    <label for="node-input-blogName"><i class="fa fa-newspaper-o"></i> Blog Name</label>
+    <input type="text" id="node-input-blogName" placeholder="Blog Name">
+</div>
+
+<div class="form-row">
+    <label for="node-input-postType"><i class="fa fa-file"></i> Post Type</label>
+    <select id="node-input-postType">
+        <option value="text">Text</option>
+        <option value="photo">Photo</option>
+        <option value="quote">Quote</option>
+        <option value="link">Link</option>
+        <option value="chat">Chat</option>
+        <option value="audio">Audio</option>
+        <option value="video">Video</option>
+    </select>
+</div>

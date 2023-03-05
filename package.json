@@ -1,0 +1,42 @@
+{
+  "name": "node-red-contrib-tumblr",
+  "description": "A simple module to interact with the Tumblr API",
+  "version": "0.0.1",
+  "main": "tumblr.js",
+  "scripts": {
+    "test": "mocha \"test/**/*_spec.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yantze/node-red-contrib-tumblr.git"
+  },
+  "keywords": [
+    "node-red",
+    "tumblr"
+  ],
+  "node-red": {
+    "version": ">=2.0.0",
+    "nodes": {
+      "Tumblr": "tumblr.js"
+    }
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "author": {
+    "name": "Yantze",
+    "email": "ivastiny@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yantze/node-red-contrib-tumblr/issues"
+  },
+  "homepage": "https://github.com/yantze/node-red-contrib-tumblr",
+  "dependencies": {
+    "tumblr.js": "^3.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^10.2.0",
+    "node-red-node-test-helper": "^0.3.0"
+  }
+}
